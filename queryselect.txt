@@ -1,0 +1,31 @@
+//Queryselector
+
+var header = document.querySelector('#header-title');
+header.style.borderBottom = 'solid 4px #ccc';
+
+var input = document.querySelector('input');
+input.value = 'Hello world';
+
+var submit = document.querySelector('input[type = "submit"]');
+submit.style.background = 'Yellow';
+
+var itme = document.querySelector('.item');
+itme.style.color = 'green';
+
+// 2nd element green in color
+var secondItem = document.querySelector('.item:nth-child(2)');
+secondItem.style.background = 'Green';
+
+var thirdItem = document.querySelector('.item:nth-child(3)');
+thirdItem.style.
+
+//query selectorall
+
+var titles = document.querySelectorAll('.title')
+console.log(titles);
+
+var odd = document.querySelectorAll('.item:nth-child(odd)');
+
+for(var i = 0; i<odd.length; i++){
+    odd[i].style.background = 'Green';
+}
