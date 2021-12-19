@@ -1,0 +1,10 @@
+let myobj = {
+    
+    name = 'Aman',
+    age = 23
+}
+
+let myboj_serialized = JSON.stringify(myobj);
+localStorage.setItem("myobj",myboj_serialized);
+let myobj_deserialized = JSON.parse(localStorage.getItem("myobj"));
+console.log(myobj_deserialized);
