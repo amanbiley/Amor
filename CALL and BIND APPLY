@@ -1,0 +1,53 @@
+//CALL
+let name = {
+    firstname: "AMAN",
+    lastname: "BILEY",
+}    
+
+let printFullName = function (hometown,state) {
+        console.log(this.firstname + " "+ this.lastname+ " from" + hometown + ","+ state);
+    }
+
+printFullName.call(name,"bhopal","MP");
+
+let name2 = {
+    firstname:"TUSHAR",
+    lastname:"BILEY",
+}
+
+printFullName.apply(name2,["Bhopal","MP"]);
+
+//BIND
+
+let printName = printFullName.bind(name2,"Bhopal","MP");
+console.log(printName);
+printName();
+
+//4
+
+let student = {
+    naam:"Aman",
+    age: 20
+}
+let printAge = function() {
+    console.log(this.naam + " "+ this.age);
+} 
+let printDetail = printAge.bind(student);
+printDetail();
+
+
+
+let multiply = function (x, y) {
+    console.log(x*y)
+}
+
+let multiply = function (x) {
+    return function (y) {
+        console.log(x*y);
+    }
+}    
+let multiplyByTwo = multiply(2);
+multiplyByTwo(3);
+    
+let multiplyByThree = multiply(3);
+multiplyByThree(10)
