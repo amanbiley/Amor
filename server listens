@@ -165,6 +165,41 @@ app.use('/',(req,resp,next) => {
 
 app.listen(3000);
 
+///
+
+const http = require('http');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+const adminroutes = require('./routes/admin');
+
+const shopRoutes = require('./routes/shop');
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(adminroutes);
+app.use(shopRoutes);
+
+
+
+app.listen(3000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
