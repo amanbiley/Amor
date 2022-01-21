@@ -135,3 +135,45 @@ app.use((req,resp,next) => {
 });
 
 app.listen(3000);
+
+const http = require('http');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use('/add-product',(req,resp,next) => {
+    //console.log('In the  secound middleware function');
+    resp.send('<form action="/product" method="POST"><input type=""text name="title"><button type="submit">Add product</button></form>');
+    resp.send('<form action="/product" method="POST"><input type=""text name="title"><button type="submit">Add Size</button></form>');
+
+});
+
+app.use('/product',(req,resp,next) => {
+    console.log(req.body);
+    resp.redirect('/');
+});
+
+app.use('/',(req,resp,next) => {
+    
+    resp.send('<h1>ABCDEFGH</h1>');
+
+});
+
+app.listen(3000);
+
+
+
+
+
+
+
+
+
+
+
+
+
