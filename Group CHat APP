@@ -1,0 +1,36 @@
+const http = require('http');
+
+const express = require('express');
+
+const app = express();
+
+// app.use('/',(req,resp,next) => {
+//     console.log('This always runs!');
+//     next();
+
+// });
+
+app.use('/login',(req,resp,next) => {
+    //console.log('In the  secound middleware function');
+    resp.send('<form onsubmit="localStorage.setItem(`username`, document.getElementById(`username`).value)" action="/product" method="POST"><input id="username" type="text" name="title"><button type="submit">add</button></form>');
+    next();
+});
+
+app.post('/login',(req,resp,next) => {
+    console.log(req.body);
+    resp.redirect('/');
+});
+
+app.listen(3000);
+
+
+
+
+
+
+
+
+
+
+
+
